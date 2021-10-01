@@ -10,13 +10,22 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class ViewUserComponent implements OnInit {
   user: User = { id: 0, first_name: "", last_name: "", email: "", avatar: "" }
-
+  delete: boolean = false
   editUser() {
     this.usersService.editUser(this.user, this.user.id).then(r => console.log("Usuario actualizado")).catch(err => console.log(err))
   }
 
-  deleteUser() {
+  deleteAlert() {
+    this.delete = confirm("¿Seguro que quieres eliminar al usuario?")
+    console.log(this.delete)
+    if (this.delete === true) {
+      this.deleteUser()
+    }
 
+  }
+
+  deleteUser() {
+    this.usersService.deletePlayer(this.user.id).then(r => "Usuario eliminado")
   }
   constructor(private usersService: UsersService, private route: ActivatedRoute) {
     usersService.getOne(this.route.snapshot.paramMap.get("id") as Number | null).then(r => {

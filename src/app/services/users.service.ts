@@ -20,5 +20,8 @@ export class UsersService {
   editUser(user: User, id: Number) {
     return axios.patch(this.apiURL + "/" + id, user).then(res => console.log(res)).catch(err => console.log(err))
   }
+  deletePlayer(id: Number) {
+    return axios.delete(this.apiURL + "/" + id).then(res => console.log(res)).catch(err => console.log(err))
+  }
   constructor() { }
 }
