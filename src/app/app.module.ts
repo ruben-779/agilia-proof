@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
 import { NgxPaginationModule } from "ngx-pagination";
 import { ViewUserComponent } from './components/view-user/view-user.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +16,8 @@ import { ViewUserComponent } from './components/view-user/view-user.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

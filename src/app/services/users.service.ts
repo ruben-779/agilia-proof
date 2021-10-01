@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
+import { User } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,8 @@ export class UsersService {
   getOne(id: Number | null) {
     return axios.get(this.apiURL + "/" + id).then(r => r.data).then((r: any) => r.data).catch(err => console.log(err))
   }
-
+  editUser(user: User, id: Number) {
+    return axios.patch(this.apiURL + "/" + id, user).then(res => console.log(res)).catch(err => console.log(err))
+  }
   constructor() { }
 }
