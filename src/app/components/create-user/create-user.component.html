@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="card" style="width: 100%">
+    <img
+      class="card-img-top"
+      src="{{ user.avatar }}"
+      alt="Card image cap"
+      style="width: 100px; margin: 10px 10px 10px 20px"
+    />
+    <div class="card-body">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="">Nombre y Apellidos</span>
+        </div>
+        <input
+          [(ngModel)]="user.first_name"
+          type="text"
+          class="form-control"
+          placeholder="{{ user.first_name }}"
+        />
+        <input
+          [(ngModel)]="user.last_name"
+          type="text"
+          class="form-control"
+          placeholder="{{ user.last_name }}"
+        />
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="">Email</span>
+        </div>
+        <input
+          [(ngModel)]="user.email"
+          type="text"
+          class="form-control"
+          placeholder="{{ user.email }}"
+        />
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="">Avatar</span>
+        </div>
+        <input
+          [(ngModel)]="user.avatar"
+          type="text"
+          class="form-control"
+          placeholder="{{ user.avatar }}"
+        />
+      </div>
+      <a
+        (click)="createUser()"
+        class="btn btn-primary"
+        style="margin-right: 10px"
+        >Crear</a
+      >
+    </div>
+  </div>
+  <a routerLink="/" class="btn btn-primary" style="margin: 10px"
+    >Volver atrás</a
+  >
+</div>

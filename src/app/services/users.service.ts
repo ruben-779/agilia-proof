@@ -23,5 +23,9 @@ export class UsersService {
   deletePlayer(id: Number) {
     return axios.delete(this.apiURL + "/" + id).then(res => console.log(res)).catch(err => console.log(err))
   }
+
+  createUser(user: User) {
+    return axios.post(this.apiURL, user).then(r => console.log(r)).catch(err => console.log(err))
+  }
   constructor() { }
 }

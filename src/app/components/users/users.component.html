@@ -1,4 +1,7 @@
-<div class="container" style="text-align: center">
+<div class="container create">
+  <a routerLink="/createuser" class="btn btn-primary">Crear usuario</a>
+</div>
+<div class="container cards">
   <div class="card" style="width: 18rem" *ngFor="let user of users">
     <img class="card-img-top" src="{{ user.avatar }}" alt="Card image cap" />
     <div class="card-body">

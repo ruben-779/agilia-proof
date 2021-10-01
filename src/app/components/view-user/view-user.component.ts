@@ -26,6 +26,7 @@ export class ViewUserComponent implements OnInit {
 
   deleteUser() {
     this.usersService.deletePlayer(this.user.id).then(r => "Usuario eliminado")
+
   }
   constructor(private usersService: UsersService, private route: ActivatedRoute) {
     usersService.getOne(this.route.snapshot.paramMap.get("id") as Number | null).then(r => {

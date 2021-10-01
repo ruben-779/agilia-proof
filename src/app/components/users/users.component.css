@@ -1,8 +1,13 @@
-.container {
+.cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 50px;
   text-align: center;
+}
+
+.create {
+  text-align: center;
+  margin: 50px 250px;
 }
 
 .card {
