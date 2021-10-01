@@ -1,0 +1,19 @@
+<div class="container create">
+  <a routerLink="/createuser" class="btn btn-primary">Crear usuario</a>
+</div>
+<div class="container cards">
+  <div class="card" style="width: 18rem" *ngFor="let user of users">
+    <img class="card-img-top" src="{{ user.avatar }}" alt="Card image cap" />
+    <div class="card-body">
+      <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+      <p class="card-text">
+        {{ user.email }}
+      </p>
+      <a routerLink="/user/{{ user.id }}" class="btn btn-primary">Editar</a>
+    </div>
+  </div>
+</div>
+<div class="paginator">
+  <a (click)="beforePage()" class="btn btn-primary">Anterior</a>
+  <a (click)="nextPage()" class="btn btn-primary">Siguiente</a>
+</div>
