@@ -29,7 +29,7 @@ export class ViewUserComponent implements OnInit {
 
   }
   constructor(private usersService: UsersService, private route: ActivatedRoute) {
-    usersService.getOne(this.route.snapshot.paramMap.get("id") as Number | null).then(r => {
+    usersService.getOne(this.route.snapshot.paramMap.get("id") as number | null).then(r => {
       this.user = r
     }).catch(err => console.log(err))
   }

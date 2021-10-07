@@ -9,18 +9,18 @@ export class UsersService {
 
   apiURL = "https://reqres.in/api/users"
 
-  getList(page: Number) {
+  getList(page: number) {
     return axios.get(this.apiURL + "?page=" + page).then(r => r.data).then((r: any) => r.data).catch(err => console.log(err))
 
   }
 
-  getOne(id: Number | null) {
+  getOne(id: number | null) {
     return axios.get(this.apiURL + "/" + id).then(r => r.data).then((r: any) => r.data).catch(err => console.log(err))
   }
-  editUser(user: User, id: Number) {
+  editUser(user: User, id: number) {
     return axios.patch(this.apiURL + "/" + id, user).then(res => console.log(res)).catch(err => console.log(err))
   }
-  deletePlayer(id: Number) {
+  deletePlayer(id: number) {
     return axios.delete(this.apiURL + "/" + id).then(res => console.log(res)).catch(err => console.log(err))
   }
 
