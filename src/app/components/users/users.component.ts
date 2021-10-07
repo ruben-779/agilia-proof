@@ -6,31 +6,26 @@ import { UsersService } from 'src/app/services/users.service';
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
+
 })
 export class UsersComponent implements OnInit {
+  p: number = 1;
   users: User[] = [];
-  pag: number = 1
-  maxPage: number = 2
-  minPage: number = 1
-  nextPage() {
-    if (this.pag < this.maxPage) {
-      this.pag += 1
-    }
-    this.usersService.getList(this.pag).then(r => this.users = r)
-  }
-  beforePage() {
-    if (this.pag > this.minPage) {
-      this.pag -= 1
-    }
-    this.usersService.getList(this.pag).then(r => this.users = r)
-  }
+
 
 
   constructor(private usersService: UsersService) {
-    usersService.getList(this.pag).then((r) => {
-      this.users = r
-      console.log(this.users);
+    usersService.getList(1).then((r) => {
+      r.forEach((e: User) => {
+        this.users.push(e)
+      });
+      usersService.getList(2).then((r) => {
+        r.forEach((e: User) => {
+          this.users.push(e)
+        });
+      })
     }).catch(err => console.log(err))
+    console.log
   }
 
   ngOnInit(): void {

@@ -6,19 +6,13 @@
 }
 
 .create {
-  text-align: center;
-  margin: 50px 250px;
+  margin: 25px 40%;
 }
 
 .card {
   margin: 10px;
 }
 
-.paginator {
-  text-align: center;
-  margin-right: 250px;
-}
-
-.paginator > * {
-  margin: 8px;
+.pagination {
+  margin: 25px 40%;
 }

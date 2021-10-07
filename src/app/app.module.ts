@@ -8,6 +8,8 @@ import { NgxPaginationModule } from "ngx-pagination";
 import { ViewUserComponent } from './components/view-user/view-user.component';
 import { FormsModule } from '@angular/forms';
 import { CreateUserComponent } from './components/create-user/create-user.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
